@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.springbootaop.customermanagement.controller.LoginController">
+    <children>
+        <Label text="Login" textFill="#4fd715">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameField" promptText="Username" maxWidth="200"/>
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="200"/>
+        <Button fx:id="loginButton" text="Login" onAction="#handleLogin"/>
+        <Label fx:id="errorLabel" textFill="RED"/>
+    </children>
+</VBox>
