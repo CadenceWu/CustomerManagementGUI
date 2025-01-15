@@ -40,15 +40,15 @@
         </VBox>
         
         <!-- Center Panel - Update Customer -->
-        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
-            <Label text="Update Customer" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
-            <TextField fx:id="idTextU" promptText="ID" styleClass="text-field"/>
-            <TextField fx:id="nameTextU" promptText="Name" styleClass="text-field"/>
-            <TextField fx:id="emailTextU" promptText="Email" styleClass="text-field"/>
-            <TextField fx:id="mobileTextU" promptText="Mobile" styleClass="text-field"/>
-            <Button fx:id="updateButton" onAction="#updateAction" text="Update Customer"
-                    style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
-        </VBox>
+<VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+    <Label text="Update Customer" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+    <TextField fx:id="idTextU" promptText="ID" styleClass="text-field" editable="false"/>
+    <TextField fx:id="nameTextU" promptText="Name" styleClass="text-field"/>
+    <TextField fx:id="emailTextU" promptText="Email" styleClass="text-field"/>
+    <TextField fx:id="mobileTextU" promptText="Mobile" styleClass="text-field"/>
+    <Button fx:id="updateButton" onAction="#updateAction" text="Update Customer"
+            style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+</VBox>
         
         <!-- Right Panel - Search/Delete -->
         <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">

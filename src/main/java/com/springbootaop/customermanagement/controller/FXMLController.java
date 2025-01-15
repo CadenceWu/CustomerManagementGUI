@@ -22,6 +22,13 @@ import org.springframework.stereotype.Component;
 public class FXMLController {
     @Autowired
     private CustomerService customerService;
+    
+
+    private static ApplicationContext applicationContext; // Change to instance variable
+
+    public static void setApplicationContext(ApplicationContext context) {
+        FXMLController.applicationContext = context;
+    }
 
     @FXML
     private TableView<Customer> cusManageTable;
@@ -42,7 +49,7 @@ public class FXMLController {
 
     private ObservableList<Customer> customers = FXCollections.observableArrayList();
     
-    private static ApplicationContext applicationContext;  // Add this
+
 
     @FXML
     public void initialize() {
@@ -196,6 +203,7 @@ public class FXMLController {
             stage.setTitle("Login");
             stage.show();
         } catch (Exception e) {
+            showAlert("Error", "Failed to logout: " + e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }

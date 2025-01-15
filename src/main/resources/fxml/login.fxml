@@ -4,16 +4,37 @@
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="com.springbootaop.customermanagement.controller.LoginController">
+      fx:controller="com.springbootaop.customermanagement.controller.LoginController" 
+      style="-fx-background-color: #f5f5f5; -fx-padding: 30;">
     <children>
-        <Label text="Login" textFill="#4fd715">
+        <!-- Title -->
+        <Label text="Login" style="-fx-text-fill: #4fd715; -fx-font-size: 24;">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <TextField fx:id="usernameField" promptText="Username" maxWidth="200"/>
-        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="200"/>
-        <Button fx:id="loginButton" text="Login" onAction="#handleLogin"/>
-        <Label fx:id="errorLabel" textFill="RED"/>
+        
+        <!-- Username Field -->
+        <TextField fx:id="usernameField" promptText="Username" maxWidth="200" 
+                   style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5; -fx-padding: 5;">
+            <tooltip>
+                <Tooltip text="Enter your username"/>
+            </tooltip>
+        </TextField>
+        
+        <!-- Password Field -->
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="200" 
+                       style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5; -fx-padding: 5;">
+            <tooltip>
+                <Tooltip text="Enter your password"/>
+            </tooltip>
+        </PasswordField>
+        
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" textFill="RED" style="-fx-font-size: 12; -fx-padding: 5;"/>
+
+        <!-- Login Button -->
+        <Button fx:id="loginButton" text="Login" onAction="#handleLogin"
+                style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"/>
     </children>
 </VBox>

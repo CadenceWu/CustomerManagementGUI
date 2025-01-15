@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+import com.springbootaop.customermanagement.controller.FXMLController;
 import com.springbootaop.customermanagement.controller.LoginController;
 import com.springbootaop.customermanagement.service.UserService;
 
@@ -28,6 +29,7 @@ public class CustomermanagementApplication {
         
         JavaFXApplication.setApplicationContext(springContext);
         LoginController.setApplicationContext(springContext);
+        FXMLController.setApplicationContext(springContext);  // Add this line
         Application.launch(JavaFXApplication.class, args);
     }
 }
