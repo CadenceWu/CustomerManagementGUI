@@ -13,7 +13,7 @@ import com.springbootaop.customermanagement.service.UserService;
 
 
 @SpringBootApplication
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy //Enable AOP in Spring.
 public class CustomermanagementApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext springContext = SpringApplication.run(CustomermanagementApplication.class, args);
@@ -27,9 +27,9 @@ public class CustomermanagementApplication {
             e.printStackTrace();
         }
         
-        JavaFXApplication.setApplicationContext(springContext);
+        JavaFXApplication.setApplicationContext(springContext); // Passing the Spring application context to the JavaFXApplication.
         LoginController.setApplicationContext(springContext);
-        FXMLController.setApplicationContext(springContext);  // Add this line
-        Application.launch(JavaFXApplication.class, args);
+        FXMLController.setApplicationContext(springContext);  
+        Application.launch(JavaFXApplication.class, args); //Launching a JavaFX application. Invoking the start() method.
     }
 }

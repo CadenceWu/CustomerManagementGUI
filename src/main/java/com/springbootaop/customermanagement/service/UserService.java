@@ -11,6 +11,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     
+    /* A work factor of 10 means 2^10 = 1024 iterations.
+     * Higher work factor → Slower hashing → More secure.
+     * default is 10.*/
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
 
     public boolean authenticate(String username, String password) {

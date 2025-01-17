@@ -16,8 +16,7 @@ public class Customer {
     }
 
     // Constructor with all fields
-    public Customer(Integer id, String name, String email, String mobile) {
-        this.id = id;
+    public Customer(String name, String email, String mobile) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;

@@ -5,7 +5,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="20" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.springbootaop.customermanagement.controller.FXMLController">
+<VBox spacing="20" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.springbootaop.customermanagement.controller.FXMLController" prefHeight="600">
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
@@ -30,25 +30,24 @@
     <HBox spacing="20">
         <!-- Left Panel - Add Customer -->
         <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
-            <Label text="Add New Customer" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
-            <TextField fx:id="idText" promptText="ID" styleClass="text-field"/>
-            <TextField fx:id="nameText" promptText="Name" styleClass="text-field"/>
-            <TextField fx:id="emailText" promptText="Email" styleClass="text-field"/>
-            <TextField fx:id="mobileText" promptText="Mobile" styleClass="text-field"/>
-            <Button fx:id="addButton" onAction="#addAction" text="Add Customer"
-                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
-        </VBox>
+        <Label text="Add New Customer" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+        <TextField fx:id="nameText" promptText="Name" styleClass="text-field"/>
+        <TextField fx:id="emailText" promptText="Email" styleClass="text-field"/>
+        <TextField fx:id="mobileText" promptText="Mobile" styleClass="text-field"/>
+        <Button fx:id="addButton" onAction="#addAction" text="Add Customer"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+    </VBox>
         
         <!-- Center Panel - Update Customer -->
-<VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
-    <Label text="Update Customer" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
-    <TextField fx:id="idTextU" promptText="ID" styleClass="text-field" editable="false"/>
-    <TextField fx:id="nameTextU" promptText="Name" styleClass="text-field"/>
-    <TextField fx:id="emailTextU" promptText="Email" styleClass="text-field"/>
-    <TextField fx:id="mobileTextU" promptText="Mobile" styleClass="text-field"/>
-    <Button fx:id="updateButton" onAction="#updateAction" text="Update Customer"
-            style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
-</VBox>
+		<VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+    		<Label text="Update Customer" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+    		<TextField fx:id="idTextU" promptText="ID" styleClass="text-field" editable="false"/>
+    		<TextField fx:id="nameTextU" promptText="Name" styleClass="text-field"/>
+    		<TextField fx:id="emailTextU" promptText="Email" styleClass="text-field"/>
+    		<TextField fx:id="mobileTextU" promptText="Mobile" styleClass="text-field"/>
+    		<Button fx:id="updateButton" onAction="#updateAction" text="Update Customer"
+            	style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+		</VBox>
         
         <!-- Right Panel - Search/Delete -->
         <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">

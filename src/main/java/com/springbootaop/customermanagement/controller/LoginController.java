@@ -50,7 +50,7 @@ public class LoginController {
                     stage.setTitle("Customer Management System");
                     stage.show();
                 } catch (Exception e) {
-                    e.printStackTrace(); // This will help us see the actual error
+                    e.printStackTrace(); 
                     errorLabel.setText("Error loading main window: " + e.getMessage());
                 }
             } else {

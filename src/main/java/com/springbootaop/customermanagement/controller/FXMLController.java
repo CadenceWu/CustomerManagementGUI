@@ -41,7 +41,7 @@ public class FXMLController {
     @FXML
     private TableColumn<Customer, String> colMobile;
     @FXML
-    private TextField idText, nameText, emailText, mobileText;
+    private TextField nameText, emailText, mobileText;
     @FXML
     private TextField idTextU, nameTextU, emailTextU, mobileTextU;
     @FXML
@@ -59,8 +59,6 @@ public class FXMLController {
 
     @FXML
     void createDatabaseAction(ActionEvent event) {
-        // This method was in your original code for creating/recreating the database
-        // You might want to move this functionality to a service class
         try {
             // Initialize database if needed
             loadCustomers(); // Refresh the table view
@@ -71,15 +69,7 @@ public class FXMLController {
     }
 
     @FXML
-    void doubleClick(MouseEvent event) {
-        if (event.getClickCount() == 2) {
-            nameTextU.clear();
-            emailTextU.clear();
-            mobileTextU.clear();
-        }
-    }
-
-    @FXML
+    //Select data from table.
     void getSelected(MouseEvent event) {
         int index = cusManageTable.getSelectionModel().getSelectedIndex();
         if (index <= -1) {
@@ -95,7 +85,6 @@ public class FXMLController {
     void addAction(ActionEvent event) {
         try {
             Customer customer = new Customer(
-                Integer.valueOf(idText.getText()),
                 nameText.getText(),
                 emailText.getText(),
                 mobileText.getText()
@@ -112,12 +101,18 @@ public class FXMLController {
     @FXML
     void updateAction(ActionEvent event) {
         try {
+            if (idTextU.getText().isEmpty()) {
+                showAlert("Error", "Please select a customer to update", Alert.AlertType.ERROR);
+                return;
+            }
+
             Customer customer = new Customer(
-                Integer.valueOf(idTextU.getText()),
                 nameTextU.getText(),
                 emailTextU.getText(),
                 mobileTextU.getText()
             );
+            customer.setId(Integer.valueOf(idTextU.getText())); // Set the ID for update
+
             customerService.updateCustomer(customer);
             loadCustomers();
             clearUpdateFields();
@@ -171,7 +166,6 @@ public class FXMLController {
     }
 
     private void clearInputFields() {
-        idText.clear();
         nameText.clear();
         emailText.clear();
         mobileText.clear();
@@ -199,7 +193,7 @@ public class FXMLController {
             Parent root = loader.load();
             
             Stage stage = (Stage) cusManageTable.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(new Scene(root, 800, 600));
             stage.setTitle("Login");
             stage.show();
         } catch (Exception e) {
